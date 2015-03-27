@@ -70,141 +70,6 @@ static void mavlink_test_aa241x_mission_status(uint8_t system_id, uint8_t compon
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
 
-static void mavlink_test_aa241x_new_fire_1(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
-{
-	mavlink_message_t msg;
-        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
-        uint16_t i;
-	mavlink_aa241x_new_fire_1_t packet_in = {
-		93372036854775807ULL,{ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 },{ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 }
-    };
-	mavlink_aa241x_new_fire_1_t packet1, packet2;
-        memset(&packet1, 0, sizeof(packet1));
-        	packet1.mission_time = packet_in.mission_time;
-        
-        	mav_array_memcpy(packet1.i, packet_in.i, sizeof(uint8_t)*16);
-        	mav_array_memcpy(packet1.j, packet_in.j, sizeof(uint8_t)*16);
-        
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_1_encode(system_id, component_id, &msg, &packet1);
-	mavlink_msg_aa241x_new_fire_1_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_1_pack(system_id, component_id, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_1_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_1_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_1_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-        mavlink_msg_to_send_buffer(buffer, &msg);
-        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
-        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
-        }
-	mavlink_msg_aa241x_new_fire_1_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-        
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_1_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_1_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-}
-
-static void mavlink_test_aa241x_new_fire_2(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
-{
-	mavlink_message_t msg;
-        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
-        uint16_t i;
-	mavlink_aa241x_new_fire_2_t packet_in = {
-		93372036854775807ULL,{ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 },{ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 }
-    };
-	mavlink_aa241x_new_fire_2_t packet1, packet2;
-        memset(&packet1, 0, sizeof(packet1));
-        	packet1.mission_time = packet_in.mission_time;
-        
-        	mav_array_memcpy(packet1.i, packet_in.i, sizeof(uint8_t)*16);
-        	mav_array_memcpy(packet1.j, packet_in.j, sizeof(uint8_t)*16);
-        
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_2_encode(system_id, component_id, &msg, &packet1);
-	mavlink_msg_aa241x_new_fire_2_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_2_pack(system_id, component_id, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_2_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_2_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_2_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-        mavlink_msg_to_send_buffer(buffer, &msg);
-        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
-        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
-        }
-	mavlink_msg_aa241x_new_fire_2_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-        
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_2_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_2_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-}
-
-static void mavlink_test_aa241x_new_fire_3(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
-{
-	mavlink_message_t msg;
-        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
-        uint16_t i;
-	mavlink_aa241x_new_fire_3_t packet_in = {
-		93372036854775807ULL,{ 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 },{ 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92 }
-    };
-	mavlink_aa241x_new_fire_3_t packet1, packet2;
-        memset(&packet1, 0, sizeof(packet1));
-        	packet1.mission_time = packet_in.mission_time;
-        
-        	mav_array_memcpy(packet1.i, packet_in.i, sizeof(uint8_t)*16);
-        	mav_array_memcpy(packet1.j, packet_in.j, sizeof(uint8_t)*16);
-        
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_3_encode(system_id, component_id, &msg, &packet1);
-	mavlink_msg_aa241x_new_fire_3_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_3_pack(system_id, component_id, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_3_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_3_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_3_decode(&msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-
-        memset(&packet2, 0, sizeof(packet2));
-        mavlink_msg_to_send_buffer(buffer, &msg);
-        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
-        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
-        }
-	mavlink_msg_aa241x_new_fire_3_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-        
-        memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_aa241x_new_fire_3_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.i , packet1.j );
-	mavlink_msg_aa241x_new_fire_3_decode(last_msg, &packet2);
-        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
-}
-
 static void mavlink_test_aa241x_water_drop_result(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
 {
 	mavlink_message_t msg;
@@ -303,14 +168,146 @@ static void mavlink_test_aa241x_picture_result(uint8_t system_id, uint8_t compon
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
 
+static void mavlink_test_aa241x_grid_fire(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_grid_fire_t packet_in = {
+		93372036854775807ULL,{ 17651, 17652, 17653, 17654, 17655, 17656, 17657, 17658, 17659, 17660, 17661, 17662, 17663, 17664, 17665, 17666 }
+    };
+	mavlink_aa241x_grid_fire_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.mission_time = packet_in.mission_time;
+        
+        	mav_array_memcpy(packet1.fire_cells, packet_in.fire_cells, sizeof(uint16_t)*16);
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_fire_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_grid_fire_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_fire_pack(system_id, component_id, &msg , packet1.mission_time , packet1.fire_cells );
+	mavlink_msg_aa241x_grid_fire_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_fire_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.fire_cells );
+	mavlink_msg_aa241x_grid_fire_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_grid_fire_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_fire_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.fire_cells );
+	mavlink_msg_aa241x_grid_fire_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
+static void mavlink_test_aa241x_grid_water(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_grid_water_t packet_in = {
+		93372036854775807ULL,{ 17651, 17652, 17653, 17654, 17655, 17656, 17657, 17658, 17659, 17660, 17661, 17662, 17663, 17664, 17665, 17666 }
+    };
+	mavlink_aa241x_grid_water_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.mission_time = packet_in.mission_time;
+        
+        	mav_array_memcpy(packet1.water_cells, packet_in.water_cells, sizeof(uint16_t)*16);
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_water_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_grid_water_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_water_pack(system_id, component_id, &msg , packet1.mission_time , packet1.water_cells );
+	mavlink_msg_aa241x_grid_water_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_water_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.water_cells );
+	mavlink_msg_aa241x_grid_water_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_grid_water_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_water_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.water_cells );
+	mavlink_msg_aa241x_grid_water_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
+static void mavlink_test_aa241x_grid_combined(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_grid_combined_t packet_in = {
+		93372036854775807ULL,{ 963497880, 963497881, 963497882, 963497883, 963497884, 963497885, 963497886, 963497887, 963497888, 963497889, 963497890, 963497891, 963497892 }
+    };
+	mavlink_aa241x_grid_combined_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.mission_time = packet_in.mission_time;
+        
+        	mav_array_memcpy(packet1.cell, packet_in.cell, sizeof(uint32_t)*13);
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_combined_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_grid_combined_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_combined_pack(system_id, component_id, &msg , packet1.mission_time , packet1.cell );
+	mavlink_msg_aa241x_grid_combined_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_combined_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.mission_time , packet1.cell );
+	mavlink_msg_aa241x_grid_combined_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_grid_combined_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_grid_combined_send(MAVLINK_COMM_1 , packet1.mission_time , packet1.cell );
+	mavlink_msg_aa241x_grid_combined_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
 static void mavlink_test_aa241x(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
 {
 	mavlink_test_aa241x_mission_status(system_id, component_id, last_msg);
-	mavlink_test_aa241x_new_fire_1(system_id, component_id, last_msg);
-	mavlink_test_aa241x_new_fire_2(system_id, component_id, last_msg);
-	mavlink_test_aa241x_new_fire_3(system_id, component_id, last_msg);
 	mavlink_test_aa241x_water_drop_result(system_id, component_id, last_msg);
 	mavlink_test_aa241x_picture_result(system_id, component_id, last_msg);
+	mavlink_test_aa241x_grid_fire(system_id, component_id, last_msg);
+	mavlink_test_aa241x_grid_water(system_id, component_id, last_msg);
+	mavlink_test_aa241x_grid_combined(system_id, component_id, last_msg);
 }
 
 #ifdef __cplusplus
