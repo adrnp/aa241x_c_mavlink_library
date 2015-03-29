@@ -300,6 +300,175 @@ static void mavlink_test_aa241x_grid_combined(uint8_t system_id, uint8_t compone
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
 
+static void mavlink_test_aa241x_high(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_high_t packet_in = {
+		93372036854775807ULL,73.0,101.0,129.0,157.0,185.0,213.0,241.0,269.0,297.0,325.0,353.0,381.0,409.0,437.0,465.0,493.0
+    };
+	mavlink_aa241x_high_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.timestamp = packet_in.timestamp;
+        	packet1.field1 = packet_in.field1;
+        	packet1.field2 = packet_in.field2;
+        	packet1.field3 = packet_in.field3;
+        	packet1.field4 = packet_in.field4;
+        	packet1.field5 = packet_in.field5;
+        	packet1.field6 = packet_in.field6;
+        	packet1.field7 = packet_in.field7;
+        	packet1.field8 = packet_in.field8;
+        	packet1.field9 = packet_in.field9;
+        	packet1.field10 = packet_in.field10;
+        	packet1.field11 = packet_in.field11;
+        	packet1.field12 = packet_in.field12;
+        	packet1.field13 = packet_in.field13;
+        	packet1.field14 = packet_in.field14;
+        	packet1.field15 = packet_in.field15;
+        	packet1.field16 = packet_in.field16;
+        
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_high_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_high_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_high_pack(system_id, component_id, &msg , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_high_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_high_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_high_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_high_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_high_send(MAVLINK_COMM_1 , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_high_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
+static void mavlink_test_aa241x_low(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_low_t packet_in = {
+		93372036854775807ULL,73.0,101.0,129.0,157.0,185.0,213.0,241.0,269.0,297.0,325.0,353.0,381.0,409.0,437.0,465.0,493.0
+    };
+	mavlink_aa241x_low_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.timestamp = packet_in.timestamp;
+        	packet1.field1 = packet_in.field1;
+        	packet1.field2 = packet_in.field2;
+        	packet1.field3 = packet_in.field3;
+        	packet1.field4 = packet_in.field4;
+        	packet1.field5 = packet_in.field5;
+        	packet1.field6 = packet_in.field6;
+        	packet1.field7 = packet_in.field7;
+        	packet1.field8 = packet_in.field8;
+        	packet1.field9 = packet_in.field9;
+        	packet1.field10 = packet_in.field10;
+        	packet1.field11 = packet_in.field11;
+        	packet1.field12 = packet_in.field12;
+        	packet1.field13 = packet_in.field13;
+        	packet1.field14 = packet_in.field14;
+        	packet1.field15 = packet_in.field15;
+        	packet1.field16 = packet_in.field16;
+        
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_low_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_low_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_low_pack(system_id, component_id, &msg , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_low_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_low_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_low_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_low_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_low_send(MAVLINK_COMM_1 , packet1.timestamp , packet1.field1 , packet1.field2 , packet1.field3 , packet1.field4 , packet1.field5 , packet1.field6 , packet1.field7 , packet1.field8 , packet1.field9 , packet1.field10 , packet1.field11 , packet1.field12 , packet1.field13 , packet1.field14 , packet1.field15 , packet1.field16 );
+	mavlink_msg_aa241x_low_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
+static void mavlink_test_aa241x_aux_data(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+{
+	mavlink_message_t msg;
+        uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+        uint16_t i;
+	mavlink_aa241x_aux_data_t packet_in = {
+		93372036854775807ULL,73.0,101.0,129.0,157.0,185.0,213.0,241.0,269.0
+    };
+	mavlink_aa241x_aux_data_t packet1, packet2;
+        memset(&packet1, 0, sizeof(packet1));
+        	packet1.timestamp = packet_in.timestamp;
+        	packet1.N = packet_in.N;
+        	packet1.E = packet_in.E;
+        	packet1.D_baro = packet_in.D_baro;
+        	packet1.D_gps = packet_in.D_gps;
+        	packet1.body_u = packet_in.body_u;
+        	packet1.body_v = packet_in.body_v;
+        	packet1.body_w = packet_in.body_w;
+        	packet1.ground_speed = packet_in.ground_speed;
+        
+        
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_aux_data_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_aa241x_aux_data_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_aux_data_pack(system_id, component_id, &msg , packet1.timestamp , packet1.N , packet1.E , packet1.D_baro , packet1.D_gps , packet1.body_u , packet1.body_v , packet1.body_w , packet1.ground_speed );
+	mavlink_msg_aa241x_aux_data_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_aux_data_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.timestamp , packet1.N , packet1.E , packet1.D_baro , packet1.D_gps , packet1.body_u , packet1.body_v , packet1.body_w , packet1.ground_speed );
+	mavlink_msg_aa241x_aux_data_decode(&msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+
+        memset(&packet2, 0, sizeof(packet2));
+        mavlink_msg_to_send_buffer(buffer, &msg);
+        for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
+        	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
+        }
+	mavlink_msg_aa241x_aux_data_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+        
+        memset(&packet2, 0, sizeof(packet2));
+	mavlink_msg_aa241x_aux_data_send(MAVLINK_COMM_1 , packet1.timestamp , packet1.N , packet1.E , packet1.D_baro , packet1.D_gps , packet1.body_u , packet1.body_v , packet1.body_w , packet1.ground_speed );
+	mavlink_msg_aa241x_aux_data_decode(last_msg, &packet2);
+        MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
+}
+
 static void mavlink_test_aa241x(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
 {
 	mavlink_test_aa241x_mission_status(system_id, component_id, last_msg);
@@ -308,6 +477,9 @@ static void mavlink_test_aa241x(uint8_t system_id, uint8_t component_id, mavlink
 	mavlink_test_aa241x_grid_fire(system_id, component_id, last_msg);
 	mavlink_test_aa241x_grid_water(system_id, component_id, last_msg);
 	mavlink_test_aa241x_grid_combined(system_id, component_id, last_msg);
+	mavlink_test_aa241x_high(system_id, component_id, last_msg);
+	mavlink_test_aa241x_low(system_id, component_id, last_msg);
+	mavlink_test_aa241x_aux_data(system_id, component_id, last_msg);
 }
 
 #ifdef __cplusplus
