@@ -4,13 +4,13 @@
 
 typedef struct __mavlink_aa241x_mission_status_t
 {
- float score; ///< Mission score (range from 0 to 100)
- float mission_time; ///< Mission time in minutes
- float battery_used; ///< Battery capacity (in mAh) used since mission start
- uint8_t can_start; ///< Whether or not mission is allowed to start: 0 = violation, 1 = start allowed
- uint8_t in_mission; ///< Mission state: 0 = not in mission, 1 = in mission
- uint8_t wind_direction; ///< The wind direction of this current mission
- uint8_t mission_index; ///< The current index of the mission being run
+ float score; /*< Mission score (range from 0 to 100)*/
+ float mission_time; /*< Mission time in minutes*/
+ float battery_used; /*< Battery capacity (in mAh) used since mission start*/
+ uint8_t can_start; /*< Whether or not mission is allowed to start: 0 = violation, 1 = start allowed*/
+ uint8_t in_mission; /*< Mission state: 0 = not in mission, 1 = in mission*/
+ uint8_t wind_direction; /*< The wind direction of this current mission*/
+ uint8_t mission_index; /*< The current index of the mission being run*/
 } mavlink_aa241x_mission_status_t;
 
 #define MAVLINK_MSG_ID_AA241X_MISSION_STATUS_LEN 16

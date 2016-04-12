@@ -4,23 +4,23 @@
 
 typedef struct __mavlink_aa241x_high_t
 {
- uint64_t timestamp; ///< The time the data was sent
- float field1; ///< Field 1
- float field2; ///< Field 2
- float field3; ///< Field 3
- float field4; ///< Field 4
- float field5; ///< Field 5
- float field6; ///< Field 6
- float field7; ///< Field 7
- float field8; ///< Field 8
- float field9; ///< Field 9
- float field10; ///< Field 10
- float field11; ///< Field 11
- float field12; ///< Field 12
- float field13; ///< Field 13
- float field14; ///< Field 14
- float field15; ///< Field 15
- float field16; ///< Field 16
+ uint64_t timestamp; /*< The time the data was sent*/
+ float field1; /*< Field 1*/
+ float field2; /*< Field 2*/
+ float field3; /*< Field 3*/
+ float field4; /*< Field 4*/
+ float field5; /*< Field 5*/
+ float field6; /*< Field 6*/
+ float field7; /*< Field 7*/
+ float field8; /*< Field 8*/
+ float field9; /*< Field 9*/
+ float field10; /*< Field 10*/
+ float field11; /*< Field 11*/
+ float field12; /*< Field 12*/
+ float field13; /*< Field 13*/
+ float field14; /*< Field 14*/
+ float field15; /*< Field 15*/
+ float field16; /*< Field 16*/
 } mavlink_aa241x_high_t;
 
 #define MAVLINK_MSG_ID_AA241X_HIGH_LEN 72

@@ -4,10 +4,10 @@
 
 typedef struct __mavlink_aa241x_water_drop_result_t
 {
- uint64_t mission_time; ///< Mission time in microseconds at which the water was dropped
- uint8_t success; ///< 1 if successfully dropped, 0 otherwise
- uint8_t i; ///< i coordinate in the grid
- uint8_t j; ///< j coordinate in the grid
+ uint64_t mission_time; /*< Mission time in microseconds at which the water was dropped*/
+ uint8_t success; /*< 1 if successfully dropped, 0 otherwise*/
+ uint8_t i; /*< i coordinate in the grid*/
+ uint8_t j; /*< j coordinate in the grid*/
 } mavlink_aa241x_water_drop_result_t;
 
 #define MAVLINK_MSG_ID_AA241X_WATER_DROP_RESULT_LEN 11

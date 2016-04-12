@@ -4,8 +4,8 @@
 
 typedef struct __mavlink_aa241x_grid_fire_t
 {
- uint64_t mission_time; ///< The time this grid was sent
- uint16_t fire_cells[16]; ///< compact version of cells on fire
+ uint64_t mission_time; /*< The time this grid was sent*/
+ uint16_t fire_cells[16]; /*< compact version of cells on fire*/
 } mavlink_aa241x_grid_fire_t;
 
 #define MAVLINK_MSG_ID_AA241X_GRID_FIRE_LEN 40

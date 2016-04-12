@@ -4,16 +4,16 @@
 
 typedef struct __mavlink_aa241x_picture_result_t
 {
- uint64_t mission_time; ///< Mission time in microseconds at which the water was dropped
- float center_n; ///< North position of the center of the picture
- float center_e; ///< East position of the center of the picture
- float center_d; ///< Down position of the center of the picture
- float pic_d; ///< Diameter in [m] of the picture
- uint8_t success; ///< 1 if successfully taken, 0 otherwise
- uint8_t num_cells; ///< Number of cells in the picture
- uint8_t i[9]; ///< list of i grid coords of grid cells in view (i = 255 means unused array element)
- uint8_t j[9]; ///< list of j grid coords of grid cells in view (j = 255 means unused array element)
- int8_t state[9]; ///< list of states of the grid cells in cell (state = 3 means unused array element)
+ uint64_t mission_time; /*< Mission time in microseconds at which the water was dropped*/
+ float center_n; /*< North position of the center of the picture*/
+ float center_e; /*< East position of the center of the picture*/
+ float center_d; /*< Down position of the center of the picture*/
+ float pic_d; /*< Diameter in [m] of the picture*/
+ uint8_t success; /*< 1 if successfully taken, 0 otherwise*/
+ uint8_t num_cells; /*< Number of cells in the picture*/
+ uint8_t i[9]; /*< list of i grid coords of grid cells in view (i = 255 means unused array element)*/
+ uint8_t j[9]; /*< list of j grid coords of grid cells in view (j = 255 means unused array element)*/
+ int8_t state[9]; /*< list of states of the grid cells in cell (state = 3 means unused array element)*/
 } mavlink_aa241x_picture_result_t;
 
 #define MAVLINK_MSG_ID_AA241X_PICTURE_RESULT_LEN 53

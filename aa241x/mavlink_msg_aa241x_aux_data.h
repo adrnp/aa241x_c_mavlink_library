@@ -4,15 +4,15 @@
 
 typedef struct __mavlink_aa241x_aux_data_t
 {
- uint64_t timestamp; ///< The time the data was sent
- float N; ///< FNorth position im [m]
- float E; ///< East position in [m]
- float D_baro; ///< Down baro position in [m]
- float D_gps; ///< Down gps position in [m]
- float body_u; ///< Body u velocity in [m/s]
- float body_v; ///< Body v velocity in [m/s]
- float body_w; ///< Body w velocity in [m/s]
- float ground_speed; ///< Ground speed in [m/s]
+ uint64_t timestamp; /*< The time the data was sent*/
+ float N; /*< FNorth position im [m]*/
+ float E; /*< East position in [m]*/
+ float D_baro; /*< Down baro position in [m]*/
+ float D_gps; /*< Down gps position in [m]*/
+ float body_u; /*< Body u velocity in [m/s]*/
+ float body_v; /*< Body v velocity in [m/s]*/
+ float body_w; /*< Body w velocity in [m/s]*/
+ float ground_speed; /*< Ground speed in [m/s]*/
 } mavlink_aa241x_aux_data_t;
 
 #define MAVLINK_MSG_ID_AA241X_AUX_DATA_LEN 40

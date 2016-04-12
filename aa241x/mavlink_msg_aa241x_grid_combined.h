@@ -4,8 +4,8 @@
 
 typedef struct __mavlink_aa241x_grid_combined_t
 {
- uint64_t mission_time; ///< The time this grid was sent
- uint32_t cell[12]; ///< compact version of cells info in bounds
+ uint64_t mission_time; /*< The time this grid was sent*/
+ uint32_t cell[12]; /*< compact version of cells info in bounds*/
 } mavlink_aa241x_grid_combined_t;
 
 #define MAVLINK_MSG_ID_AA241X_GRID_COMBINED_LEN 56

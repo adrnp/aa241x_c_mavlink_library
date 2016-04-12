@@ -4,8 +4,8 @@
 
 typedef struct __mavlink_aa241x_grid_water_t
 {
- uint64_t mission_time; ///< The time this grid was sent
- uint16_t water_cells[16]; ///< compact version of cells that are water
+ uint64_t mission_time; /*< The time this grid was sent*/
+ uint16_t water_cells[16]; /*< compact version of cells that are water*/
 } mavlink_aa241x_grid_water_t;
 
 #define MAVLINK_MSG_ID_AA241X_GRID_WATER_LEN 40
